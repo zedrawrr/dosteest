@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Safe Load Test Runner — Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Safe Load Test Runner (Demo)</h1>
+    <p class="tagline">Generate local test scripts & commands for authorized performance testing only.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Test Setup</h2>
+      <label for="target">Target URL</label>
+      <input id="target" type="url" placeholder="https://example.com" />
+
+      <label for="concurrency">Virtual Users / Threads</label>
+      <input id="concurrency" type="number" value="10" min="1" />
+
+      <label for="duration">Duration (seconds)</label>
+      <input id="duration" type="number" value="30" min="1" />
+
+      <div class="consent">
+        <input id="confirmOwn" type="checkbox" />
+        <label for="confirmOwn">I confirm I OWN or HAVE WRITTEN PERMISSION to test the target above.</label>
+      </div>
+
+      <div class="actions">
+        <button id="generateK6">Generate k6 script</button>
+        <button id="generateCurl">Show safe curl example (local)</button>
+        <button id="simulate">Simulate Run (client-side)</button>
+      </div>
+    </section>
+
+    <section class="card output">
+      <h2>Output / Guidance</h2>
+      <div id="notice" class="notice">Make sure you have permission. Unauthorized testing is illegal.</div>
+      <pre id="outputArea" class="codeblock" readonly></pre>
+      <a id="downloadLink" class="hidden" download="k6_test.js">Download k6 script</a>
+    </section>
+
+    <section class="card resources">
+      <h2>Resources & Alternatives</h2>
+      <ul>
+        <li>k6 — load testing tool (run locally): <code>k6 run script.js</code></li>
+        <li>Locust — Python-based performance testing for authorized targets</li>
+        <li>ApacheBench (ab) — simple CLI load testing</li>
+        <li>OWASP Juice Shop — learn web hacking ethically in a local lab</li>
+        <li>CTFs & wargames — e.g., HackTheBox, TryHackMe (legal learning)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Designed for legal, educational use only. Do not use for attacks.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
